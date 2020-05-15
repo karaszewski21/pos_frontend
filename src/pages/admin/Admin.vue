@@ -4,7 +4,7 @@
     <div class="menu-step-item">
       <div class="button-item button-item-size"><router-link to="/admin/product">Produkty</router-link></div>
       <div class="button-item button-item-size"><router-link to="/admin/offer">Oferty</router-link></div>
-      <div class="button-item button-item-size">Receptura</div>
+      <div class="button-item button-item-size"><router-link to="/admin/recipe">Receptury</router-link></div>
       <div class="button-item button-item-size">Inne</div>
     </div>
     <div class="menu-pion-item">

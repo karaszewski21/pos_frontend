@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="add-product">
         <span>Nazwa:</span>
         <input v-model="product.name" placeholder="podaj nazwe">
 
@@ -63,3 +63,10 @@ export default {
   
 }
 </script>
+<style lang="scss" scoped>
+  .add-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>

@@ -4,6 +4,7 @@ import Admin from '../pages/admin/Admin.vue'
 import Order from '../pages/order/Order.vue'
 import Product from '../pages/admin/product/Product'
 import Offer from '../pages/admin/offer/Offer'
+import Recipe from '../pages/admin/recipe/Recipe'
 
 Vue.use(VueRouter)
 
@@ -13,6 +14,7 @@ const routes = [
     children: [
       { path: 'offer', component: Offer },
       { path: 'product', component: Product },
+      { path: 'recipe', component: Recipe },
     ]
   },
   {

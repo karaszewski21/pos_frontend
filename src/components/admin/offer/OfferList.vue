@@ -1,15 +1,14 @@
 <template>
 <div class="product-list">
 
-      <div class="md-list" v-for="product in this.getProducts" :key="product.id">
+      <div class="md-list" v-for="offer in this.getOffers" :key="offer.id">
         <md-avatar>
           <img src="https://placeimg.com/40/40/people/1" alt="People">
         </md-avatar>
 
         <div class="md-list-item-text">
-          <span>{{ product.name }}</span>
-          <span>{{ product.description }}</span>
-          <p>I'll be in your neighborhood doing errands this week. Do you want to meet?</p>
+          <span>{{ offer.name }}</span>
+          <p>{{ offer.description }}</p>
         </div>
 
         <md-button class="md-icon-button md-list-action">
@@ -26,12 +25,12 @@ import { mapActions, mapGetters } from 'vuex'
 
 export default {
 
-  name: 'ProductList',
+  name: 'OfferList',
 
   methods: {
 
     ...mapActions([
-        'fetchProducts'
+        'fetchOffers'
     ])
 
   },
@@ -39,18 +38,18 @@ export default {
   computed: {
 
     ...mapGetters({
-        getProducts: 'activeProducts'
+        getOffers: 'activeOffers'
     })
     
   },
 
-  async created(){
-    this.fetchProducts();
+//   async created(){
+//     this.fetchOffers();
     
-  },
+//   },
 
   async mounted() {
-    this.fetchProducts();
+    this.fetchOffers();
     
   }
 }

@@ -1,13 +1,13 @@
 <template>
-<div class="product-container">
-  <div class="product-menu">
+<div class="recipe-container">
+  <div class="recipe-menu">
     <md-toolbar class="md-accent" md-elevation="1">
     <h3 class="md-title" style="flex: 1">Title</h3>
     <md-button>Refresh</md-button>
-    <md-button class="md-primary" @click="showDialog = true">Nowy produkt</md-button>
+    <md-button class="md-primary" @click="showDialog = true">Nowy receptura</md-button>
     </md-toolbar>
   </div>
-  <product-list />
+  <!-- <recipe-list /> -->
   <div class="modal-mask" v-if="showDialog">
     <div class="modal-wrapper">
       <div class="modal-container">
@@ -20,7 +20,7 @@
         </div>
         <div class="modal-body">
           <slot name="body">                     
-            <add-product />
+            <add-recipe />
           </slot>
         </div>
         <div class="modal-footer">
@@ -35,14 +35,13 @@
 </template>
 
 <script>
-import ProductList from '../../../components/admin/product/ProductList'
-import AddProduct from '../../../components/admin/product/AddProduct'
+// import recipeList from '../../../components/admin/recipe/recipeList'
+import AddRecipe from '../../../components/admin/recipe/AddRecipe'
 
 export default {
-  name: 'Product',
+  name: 'Recipe',
   components: {
-    ProductList,
-    AddProduct   
+    AddRecipe   
   },
   data: () => ({
       showDialog: false
@@ -50,30 +49,30 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .product-container {
+  .recipe-container {
     margin: 0;
     border: 1px solid red;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "product-menu product-menu product-menu product-menu product-menu"  "product-list product-list product-list product-list product-list";
+    grid-template-areas: "recipe-menu recipe-menu recipe-menu recipe-menu recipe-menu"  "recipe-list recipe-list recipe-list recipe-list recipe-list";
     column-gap: 10px;
     row-gap: 15px;
   }
 
-  .product-menu {
-    grid-area: product-menu;
+  .recipe-menu {
+    grid-area: recipe-menu;
   }
 
-  .product-list {
+  .recipe-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    grid-area: product-list;
+    grid-area: recipe-list;
   }
 
-  .new-product-dialog {
-    grid-area: new-product-dialog;
+  .new-recipe-dialog {
+    grid-area: new-recipe-dialog;
   }
 
   .modal-mask {
